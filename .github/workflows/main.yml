@@ -30,7 +30,9 @@ jobs:
         context: ./app
         file: ./app/Dockerfile
         push: true
+        build-args:
+           BRANCH=${{ env.BRANCH}} 
         tags:
-          luizfgarcia/desafiodevops:v1
-          luizfgarcia/desafiodevops:latest
+          luizfgarcia/desafio-devops:v1
+          luizfgarcia/desafio-devops:latest
     

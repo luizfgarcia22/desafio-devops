@@ -28,5 +28,5 @@ jobs:
         file: ./app/Dockerfile
         push: true
         tags: 
-          luizfgarcia/desafio-devops:v1
+          luizfgarcia/desafio-devops:${{github.run.number}}
     

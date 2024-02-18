@@ -29,5 +29,5 @@ jobs:
         push: true
         tags: 
           luizfgarcia/desafio-devops:v1
-          luizfgarcia/desafio-devops:latest
+          luizfgarcia/desafio-devops:v2
     

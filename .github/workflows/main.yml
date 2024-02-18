@@ -27,5 +27,6 @@ jobs:
         context: ./app
         file: ./app/Dockerfile
         push: true
-        tags: ${{ steps.meta_pytorch.outputs.tags }}
+        tags: 
+          luizfgarcia/desafio-devops:v1
     

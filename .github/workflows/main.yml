@@ -11,10 +11,10 @@ jobs:
     steps:
     - uses: actions/checkout@v4.1.1
 
-    -name: Set BRANCH
-     run: echo "BRANCH=${GITHUB_REF##*/}" >> $GITHUB_ENV
+    - name: Set BRANCH
+      run: echo "BRANCH=${GITHUB_REF##*/} >> $GITHUB_ENV
 
-     -name: Set up Buildx
+    - name: Set up Buildx
       uses: docker/setup-buildx-action@v1
 
     - name: Autenticação Docker Hub

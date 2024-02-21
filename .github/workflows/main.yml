@@ -30,7 +30,7 @@ jobs:
         tags: 
           luizfgarcia/desafio-devops:${{github.run_number}}
 
-   CD:
+    CD:
      runs-on: ubuntu-latest
 
      steps:

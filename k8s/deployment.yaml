@@ -59,7 +59,7 @@ spec:
     spec:
       containers:
         - name: web
-          image: luizfegarcia/desafio-devops
+          image: luizfgarcia/desafio-devops
           ports:
           - containerPort: 8080
           env:

@@ -37,7 +37,7 @@ kind: Deployment
 metadata:
   name: python
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: python

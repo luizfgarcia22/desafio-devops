@@ -16,23 +16,16 @@ spec:
           image: python:3.7.4
           ports:
           - containerPort: 4025
-          env:
-          - name: POSTGRES_DB
-            value: "python"
-          - name: POSTGRES_USER
-            value: "python"
-          - name: POSTGRES_PASSWORD
-            value: "Pg#123"  
-
+            
 ---
 
 apiVersion: v1
 kind: Service
 metadata:
-  name: postgre
+  name: python
 spec:
   selector: 
-    app: postgre
+    app: python
   ports:
     - port: 4025
   type: ClusterIP
@@ -42,43 +35,35 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: web
+  name: python
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: web
+      app: python
   template:
     metadata:
       labels:
-        app: web
+        app: python
       annotations:
         prometheus.io/scrape: "true"
         prometheus.io/port: "8080"
         prometheus.io/path: "/metrics"
     spec:
       containers:
-        - name: web
+        - name: python
           image: luizfgarcia/desafio-devops
           ports:
           - containerPort: 8080
-          env:
-          - name: DB_DATABASE
-            value: "python"
-          - name: DB_USERNAME
-            value: "python"
-          - name: DB_PASSWORD
-            value: "Pg#123" 
-          - name: DB_HOST
-            value: "python"  
+            
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: web
+  name: python
 spec:
   selector: 
-    app: web
+    app: python
   ports:
     - port: 80
       targetPort: 8080
